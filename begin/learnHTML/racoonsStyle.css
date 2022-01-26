@@ -1,6 +1,6 @@
 header {
     height: 100px;
-    background-color: orangered;
+    background-color: coral;
 }
 aside {
     width: 250px;
@@ -8,14 +8,17 @@ aside {
     float: left;
 }
 ul {
-    background-color: orangered;
+    background-color: coral;
     width: 160px;
 }
 
 section {
-    background-color: #eee;
+    background-color: aliceblue;
 }
 footer {
     background-color: peru;
     height: 70px;
+}
+h2 {
+    color: coral;
 }
