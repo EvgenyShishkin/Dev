@@ -1,0 +1,21 @@
+header {
+    height: 100px;
+    background-color: orangered;
+}
+aside {
+    width: 250px;
+    height: 200px;
+    float: left;
+}
+ul {
+    background-color: orangered;
+    width: 160px;
+}
+
+section {
+    background-color: #eee;
+}
+footer {
+    background-color: peru;
+    height: 70px;
+}
