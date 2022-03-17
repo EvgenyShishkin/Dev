@@ -1,0 +1,42 @@
+a, p {
+    color: black;
+}
+.aRed:hover {
+    color: red;
+}
+.aGreen:hover {
+    color: green;
+}
+.aBlue:hover {
+    color: blue;
+}
+.red::selection {
+    background-color: red;
+}
+.green::selection {
+    background-color: green;
+}
+.blue::selection {
+    background-color: blue;
+}
+.pRed::first-letter {
+    color: red;
+}
+.pBlue::first-letter {
+    color: blue;
+}
+.pGreen::first-letter {
+    color: green;
+}
+.pRed:active {
+    color: red;
+}
+.pGreen:active {
+    color: green;
+}
+.pBlue:active {
+    color: blue;
+}
+.pRed:active::first-letter, .pGreen:active::first-letter, .pBlue:active::first-letter  {
+    color: black;
+}
