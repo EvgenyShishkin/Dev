@@ -185,7 +185,7 @@ header {
 }
 .featText ul {
   list-style-position: inside;
-  /* list-style-image: url(img/ok.svg); */
+  /* list-style-image: url(images/ok.svg); */
 }
 .featText ul li {
   color: #4f5665;
@@ -200,7 +200,7 @@ header {
   top: 5px;
   width: 21px;
   height: 20px;
-  background-image: url(img/ok.svg);
+  background-image: url(images/ok.svg);
   margin-right: 12px;
 }
 /**************PLAN BLOCK************/
@@ -251,7 +251,7 @@ header {
   display: inline-block;
   width: 15px;
   height: 9px;
-  background-image: url(img/okmin.svg);
+  background-image: url(images/okmin.svg);
   margin-right: 27px;
 }
 .pCost {
@@ -378,7 +378,7 @@ header {
   display: inline-block;
   width: 13.3px;
   height: 12.7px;
-  background-image: url(img/goldStar.svg);
+  background-image: url(images/goldStar.svg);
   margin-left: 11px;
 }
 .custCardNav {
