@@ -8,9 +8,8 @@ const templateData = {
 
 const root = document.querySelector('.wrapper');
 
-function renderChoiseBlock () {
-    const choiseBlockContainer = document.createElement('div');
-    choiseBlockContainer.className = 'choiseBlock';
+
+function getCallTypesBlock () {
 
     const themeList = document.createElement('ul');
     themeList.className ='chbTheme';
@@ -22,9 +21,31 @@ function renderChoiseBlock () {
         themeButton.innerHTML = templateData.requestionType[i].name;
         themeList.append(themeButton);
     }
+    return themeList;
+}
+function getClientsTypeBlock () {
+    const clientTypeList = document.createElement('ul');
+    clientTypeList.className = 'chbClientType';
 
-    choiseBlockContainer.append(themeList);
+    for (let i=0;i<templateData.userTypes.length;i++) {
+        let clientButton = document.createElement('li');
+        clientButton.className = 'client';
+        clientButton.className = templateData.userTypes[i].color;
+        clientButton.dataset.id = templateData.userTypes[i].color;
+        clientButton.innerHTML = templateData.userTypes[i].name;
+        clientTypeList.append(clientButton);
+    }
+    
+    return clientTypeList;
+}
+
+function renderChoiseBlock () {
+    const choiseBlockContainer = document.createElement('div');
+    choiseBlockContainer.className = 'choiseBlock';
+
+    choiseBlockContainer.append(getCallTypesBlock ());
+    choiseBlockContainer.append(getClientsTypeBlock ());
+
     root.append(choiseBlockContainer);
-
 }
 renderChoiseBlock ();
