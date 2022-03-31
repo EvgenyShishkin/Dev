@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", sans-serif;
+  list-style-type: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+.choiseBlock {
+  margin: 20px;
+}
+.chbTheme,
+.chbClientType {
+  display: flex;
+  margin-bottom: 20px;
+}
+.theme {
+  line-height: 30px;
+  padding: 0 16px;
+  margin-right: 20px;
+  color: rgb(94, 94, 94);
+  font-weight: 500;
+  border-radius: 20px;
+  border: 2px solid #555;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.theme:hover {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+}
+.client {
+  line-height: 25px;
+  padding: 0 6px;
+  margin-right: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.red {
+  color: red;
+  border: 1px solid red;
+}
+.red:hover {
+  background-color: red;
+  color: #fff;
+}
+.yellow {
+  color: rgb(216, 213, 24);
+  border: 1px solid rgb(216, 213, 24);
+}
+.yellow:hover {
+  background-color: rgb(216, 213, 24);
+  color: #fff;
+}
+.green {
+  color: green;
+  border: 1px solid green;
+}
+.green:hover {
+  background-color: green;
+  color: #fff;
+}
+.blue {
+  color: blue;
+  border: 1px solid blue;
+}
+.blue:hover {
+  background-color: blue;
+  color: #fff;
+}
+
+.characterDescription {
+}
