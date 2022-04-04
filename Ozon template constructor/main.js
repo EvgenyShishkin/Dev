@@ -14,15 +14,20 @@ const arrRight = document.querySelector('.arrRight');
 // РЕНДЕР КНОПОК
 function getCallTypesBlock () {
 
-    const themeList = document.createElement('ul');
+    const themeList = document.createElement('div');
     themeList.className ='chbTheme';
 
     for (let i=0;i < templateData.requestionType.length;i++) {
-        let themeButton = document.createElement('li');
-        themeButton.className = 'theme';
+        let themeButton = document.createElement('input');
+        let themeLabel = document.createElement('label');
+        themeButton.type = 'radio';
         themeButton.dataset.id = templateData.requestionType[i].id;
-        themeButton.innerHTML = templateData.requestionType[i].name;
-        themeList.append(themeButton);
+        themeButton.setAttribute('name','themeType');
+        themeLabel.className = 'theme';
+        themeLabel.innerHTML = templateData.requestionType[i].name;
+        themeLabel.append(themeButton);
+        themeList.append(themeLabel);
+
     }
     return themeList;
 }
@@ -32,11 +37,15 @@ function getClientsTypeBlock () {
 
     for (let i=0;i<templateData.userTypes.length;i++) {
         let clientButton = document.createElement('input');
+        let clientLabel = document.createElement('label');
         clientButton.type = 'radio';
-        clientButton.className = `client ${templateData.userTypes[i].color}`;
+        clientButton.setAttribute('name','clientType');
+        clientLabel.className = `client ${templateData.userTypes[i].color}`;
         clientButton.dataset.id = templateData.userTypes[i].color;
-        clientButton.innerHTML = templateData.userTypes[i].name;
-        clientTypeList.append(clientButton);
+        clientLabel.innerHTML = templateData.userTypes[i].name;
+        
+        clientLabel.append(clientButton);
+        clientTypeList.append(clientLabel);
     }
     
     return clientTypeList;
@@ -54,7 +63,6 @@ function renderChoiseBlock () {
 renderChoiseBlock ();
 
 let position = 0;
-
 arrRight.addEventListener('click', () => {
     
     if (description.style.left == '' || position >-1200) {
