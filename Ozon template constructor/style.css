@@ -26,6 +26,7 @@
   border: 2px solid #555;
   cursor: pointer;
   transition: 0.5s;
+  text-align: center;
 }
 .theme:hover {
   transform: scale(1.1);
@@ -33,21 +34,28 @@
   -o-transform: scale(1.1);
   -moz-transform: scale(1.1);
 }
+
+input[name=themeType]:checked + div {
+  background-color: #555;
+  color: #fff;
+}
 .client {
   line-height: 25px;
   padding: 0 6px;
-  margin-right: 10px;
+  margin-right: 20px;
   font-size: 14px;
   font-weight: 500;
   border-radius: 20px;
   cursor: pointer;
   transition: 0.5s;
 }
+
 .red {
   color: red;
   border: 1px solid red;
 }
-label.red:hover {
+label.red:hover,
+input[name=clientType]:checked + .red  {
   background-color: red;
   color: #fff;
 }
@@ -55,7 +63,8 @@ label.red:hover {
   color: rgb(165, 162, 13);
   border: 1px solid rgb(216, 213, 24);
 }
-label.yellow:hover {
+label.yellow:hover,
+input[name=clientType]:checked + .yellow {
   background-color: rgb(216, 213, 24);
   color: #fff;
 }
@@ -63,7 +72,8 @@ label.yellow:hover {
   color: green;
   border: 1px solid green;
 }
-label.green:hover {
+label.green:hover, 
+input[name=clientType]:checked + .green {
   background-color: green;
   color: #fff;
 }
@@ -71,10 +81,12 @@ label.green:hover {
   color: blue;
   border: 1px solid blue;
 }
-label.blue:hover {
+label.blue:hover, 
+input[name=clientType]:checked + .blue {
   background-color: blue;
   color: #fff;
 }
+
 
 .clientTypeDescriptionBlock {
   width: 400px;

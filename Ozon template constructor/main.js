@@ -20,12 +20,15 @@ function getCallTypesBlock () {
     for (let i=0;i < templateData.requestionType.length;i++) {
         let themeButton = document.createElement('input');
         let themeLabel = document.createElement('label');
+        let themeContent = document.createElement('div')
         themeButton.type = 'radio';
         themeButton.dataset.id = templateData.requestionType[i].id;
         themeButton.setAttribute('name','themeType');
-        themeLabel.className = 'theme';
-        themeLabel.innerHTML = templateData.requestionType[i].name;
+        themeContent.className = 'theme';
+        themeContent.innerHTML = templateData.requestionType[i].name;
+
         themeLabel.append(themeButton);
+        themeLabel.append(themeContent);
         themeList.append(themeLabel);
 
     }
@@ -38,13 +41,15 @@ function getClientsTypeBlock () {
     for (let i=0;i<templateData.userTypes.length;i++) {
         let clientButton = document.createElement('input');
         let clientLabel = document.createElement('label');
+        let clientContent = document.createElement('div')
         clientButton.type = 'radio';
         clientButton.setAttribute('name','clientType');
-        clientLabel.className = `client ${templateData.userTypes[i].color}`;
+        clientContent.className = `client ${templateData.userTypes[i].color}`;
         clientButton.dataset.id = templateData.userTypes[i].color;
-        clientLabel.innerHTML = templateData.userTypes[i].name;
+        clientContent.innerHTML = templateData.userTypes[i].name;
         
         clientLabel.append(clientButton);
+        clientLabel.append(clientContent);
         clientTypeList.append(clientLabel);
     }
     
@@ -54,7 +59,6 @@ function getClientsTypeBlock () {
 function renderChoiseBlock () {
     const choiseBlockContainer = document.createElement('div');
     choiseBlockContainer.className = 'choiseBlock';
-
     choiseBlockContainer.append(getCallTypesBlock ());
     choiseBlockContainer.append(getClientsTypeBlock ());
 
