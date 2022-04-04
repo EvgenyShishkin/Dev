@@ -55,15 +55,17 @@ renderChoiseBlock ();
 
 let position = 0;
 
-arrLeft.addEventListener('click', () => {
+arrRight.addEventListener('click', () => {
     
     if (description.style.left == '' || position >-1200) {
         position -= 400;
         description.style.left = position + 'px';
-        console.log(position)
-        
     }
+} )
+arrLeft .addEventListener('click', () => {
     
-    console.log(position)
-    
+    if (position < 0) {
+        position += 400;
+        description.style.left = position + 'px';
+    }
 } )

@@ -79,7 +79,7 @@ li.blue:hover {
   width: 400px;
   margin-left: 50px;
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .description {
   width: 1600px;
