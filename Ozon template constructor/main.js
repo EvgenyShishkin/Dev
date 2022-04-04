@@ -29,8 +29,7 @@ function getClientsTypeBlock () {
 
     for (let i=0;i<templateData.userTypes.length;i++) {
         let clientButton = document.createElement('li');
-        clientButton.className = 'client';
-        clientButton.className = templateData.userTypes[i].color;
+        clientButton.className = `client ${templateData.userTypes[i].color}`;
         clientButton.dataset.id = templateData.userTypes[i].color;
         clientButton.innerHTML = templateData.userTypes[i].name;
         clientTypeList.append(clientButton);
@@ -49,3 +48,4 @@ function renderChoiseBlock () {
     root.append(choiseBlockContainer);
 }
 renderChoiseBlock ();
+//
