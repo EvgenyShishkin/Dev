@@ -8,6 +8,7 @@
 }
 .choiseBlock {
   margin: 20px;
+  width: 50%;
 }
 .chbTheme,
 .chbClientType {
@@ -45,7 +46,7 @@
   color: red;
   border: 1px solid red;
 }
-.red:hover {
+li.red:hover {
   background-color: red;
   color: #fff;
 }
@@ -53,7 +54,7 @@
   color: rgb(216, 213, 24);
   border: 1px solid rgb(216, 213, 24);
 }
-.yellow:hover {
+li.yellow:hover {
   background-color: rgb(216, 213, 24);
   color: #fff;
 }
@@ -61,7 +62,7 @@
   color: green;
   border: 1px solid green;
 }
-.green:hover {
+li.green:hover {
   background-color: green;
   color: #fff;
 }
@@ -69,10 +70,42 @@
   color: blue;
   border: 1px solid blue;
 }
-.blue:hover {
+li.blue:hover {
   background-color: blue;
   color: #fff;
 }
 
-.characterDescription {
+.clientTypeDescriptionBlock {
+  width: 400px;
+  margin-left: 50px;
+  position: relative;
+  overflow: hidden;
+}
+.description {
+  width: 1600px;
+  height: 220px;
+  display: flex;
+  position: relative;
+}
+h4 {
+  margin-bottom: 20px;
+}
+.descr {
+  width: 400px;
+  height: 220px;
+  text-align: center;
+}
+.arrows {
+  display: flex;
+  justify-content: space-between;
+}
+.arr {
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  border: 1px solid #777;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 10px;
+  cursor: pointer;
 }

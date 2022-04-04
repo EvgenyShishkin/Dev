@@ -7,8 +7,11 @@ const templateData = {
   }
 
 const root = document.querySelector('.wrapper');
+const description = document.querySelector('.description');
+const arrLeft = document.querySelector('.arrLeft');
+const arrRight = document.querySelector('.arrRight');
 
-
+// РЕНДЕР КНОПОК
 function getCallTypesBlock () {
 
     const themeList = document.createElement('ul');
@@ -28,9 +31,9 @@ function getClientsTypeBlock () {
     clientTypeList.className = 'chbClientType';
 
     for (let i=0;i<templateData.userTypes.length;i++) {
-        let clientButton = document.createElement('li');
-        clientButton.className = 'client';
-        clientButton.className = templateData.userTypes[i].color;
+        let clientButton = document.createElement('input');
+        clientButton.type = 'radio';
+        clientButton.className = `client ${templateData.userTypes[i].color}`;
         clientButton.dataset.id = templateData.userTypes[i].color;
         clientButton.innerHTML = templateData.userTypes[i].name;
         clientTypeList.append(clientButton);
@@ -46,6 +49,21 @@ function renderChoiseBlock () {
     choiseBlockContainer.append(getCallTypesBlock ());
     choiseBlockContainer.append(getClientsTypeBlock ());
 
-    root.append(choiseBlockContainer);
+    root.prepend(choiseBlockContainer);
 }
 renderChoiseBlock ();
+
+let position = 0;
+
+arrLeft.addEventListener('click', () => {
+    
+    if (description.style.left == '' || position >-1200) {
+        position -= 400;
+        description.style.left = position + 'px';
+        console.log(position)
+        
+    }
+    
+    console.log(position)
+    
+} )
