@@ -35,7 +35,7 @@ function getCallTypesBlock () {
     return themeList;
 }
 function getClientsTypeBlock () {
-    const clientTypeList = document.createElement('ul');
+    const clientTypeList = document.createElement('div');
     clientTypeList.className = 'chbClientType';
 
     for (let i=0;i<templateData.userTypes.length;i++) {
@@ -45,6 +45,7 @@ function getClientsTypeBlock () {
         clientButton.type = 'radio';
         clientButton.setAttribute('name','clientType');
         clientContent.className = `client ${templateData.userTypes[i].color}`;
+        
         clientButton.dataset.id = templateData.userTypes[i].color;
         clientContent.innerHTML = templateData.userTypes[i].name;
         
@@ -64,20 +65,47 @@ function renderChoiseBlock () {
 
     root.prepend(choiseBlockContainer);
 }
-renderChoiseBlock ();
 
-let position = 0;
-arrRight.addEventListener('click', () => {
-    
-    if (description.style.left == '' || position >-1200) {
-        position -= 400;
-        description.style.left = position + 'px';
+function renderClientDescriptionBlock () {
+    const clientTypeDescriptionBlock = document.createElement('div');
+    const description = document.createElement('div');
+    clientTypeDescriptionBlock.className = 'clientTypeDescriptionBlock';
+    description.className = 'description';
+
+    for (let i = 0; i < templateData.userTypes.length;i++) {
+        let clientBlock = document.createElement('div');
+        let clientBlockH4 = document.createElement('h4');
+        clientBlock.className = `descr ${templateData.userTypes[i].color}`;
+        clientBlock.dataset.color = templateData.userTypes[i].color;
+        clientBlockH4.innerHTML = templateData.userTypes[i].name;
+        clientBlock.innerHTML = templateData.userTypes[i].mark + '</br></br>' + templateData.userTypes[i].description;
+
+        clientBlock.prepend(clientBlockH4);
+        description.append(clientBlock);
+
     }
-} )
-arrLeft .addEventListener('click', () => {
-    
-    if (position < 0) {
-        position += 400;
-        description.style.left = position + 'px';
+
+    clientTypeDescriptionBlock.append(description);
+    root.append(clientTypeDescriptionBlock);
+
+}
+renderChoiseBlock ();
+renderClientDescriptionBlock();
+
+const buttonsList = document.querySelectorAll('.chbClientType input');
+const descrList = document.querySelectorAll('.description div');
+
+function handleColorSelect (event) {
+    let targetColor = event.target.dataset.id;
+
+    for (let i = 0; i < descrList.length;i++) {
+        if (descrList[i].dataset.color === targetColor) {
+            descrList[i].style.display = 'block';
+        } else {descrList[i].style.display = 'none';}
     }
-} )
+}
+
+buttonsList[3].addEventListener('click', handleColorSelect )
+buttonsList[2].addEventListener('click', handleColorSelect )
+buttonsList[1].addEventListener('click', handleColorSelect )
+buttonsList[0].addEventListener('click', handleColorSelect )
