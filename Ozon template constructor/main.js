@@ -1,9 +1,14 @@
 const templateData = {
-    requestionType: [{id:"type1",name:"Пересорт"},{id:"type2",name:"Отмена заказа"},{id:"type3",name:"Нарушение сроков"}],
+    requestionType: [{id:"type0",name:"Другой товар"},{id:"type1",name:"Пересорт"},{id:"type2",name:"Отмена заказа"},{id:"type3",name:"Нарушение сроков"}],
     userTypes: [{color:"red",name:"Доминирование",mark:"Доминирует, прямой, вспыльчивый/раздражительный",description:"Требует быстрый результат; больше внимание на факты, а не эмоции; требование компенсации; использует caps lock и знаки восклицания"},
                 {color:"yellow",name:"Влияние",mark:"Активный, эмоциональный; Любит быть в центре внимания; в общении гибкий, уклоничвый, неконкретный",description:"Доброжелательный, открытый; непоследовательный; задает много вопросов; прислушивается; больше внимание на эмоции, а не факты; интересуется мнением специалиста; привлекает внимание: 'ау! вы где?'; вежливый; присылает смайлики ",},
                 {color:"green",name:"Постоянство",mark:"Сочетает пассивность и эмоциональность. Спокойный, консервативный, собственник, интроверт",description:"Перепроверяет свое решение, не спешит; привык советоваться и только после делать выбор; внимание на эмоции, а не факты; нуждается в поддержке; ощущение, что он всегда грустит. Обращается повторно, чтобы проверить выполнение действия; не сразу принимает решение, если вариантов несколько; может сообщать, что перед ним не извинились, не поняли его"},
-                {color:"blue",name:"Соответствие",mark:"Пассивный, логичный, вдумчивый, следует правилам; нуждается в информации; прямой; скептик и критик",description:"Общается четко без ярких эмоций; просчитывает последствия; принимает решение сам; внимание на факты, а не эмоции; умещает мысли в одном сообщении четко и кратко; если оператор уделил внимание на эмоции, а не решение вопроса, уточнит еще раз, как решить вопрос"},]
+                {color:"blue",name:"Соответствие",mark:"Пассивный, логичный, вдумчивый, следует правилам; нуждается в информации; прямой; скептик и критик",description:"Общается четко без ярких эмоций; просчитывает последствия; принимает решение сам; внимание на факты, а не эмоции; умещает мысли в одном сообщении четко и кратко; если оператор уделил внимание на эмоции, а не решение вопроса, уточнит еще раз, как решить вопрос"},],
+    employeeTasks: [
+                {userColor:"red",description:"Быть уверенным; говорить фактами; предлагать альтернативные варианты; аргументировать действия; не диктовать условия, а позволить выбрать"},
+                {userColor:"yellow",description:"Будь внимателен к эмоциям клиентов и ко всем вопросам (их может быть много); используй эмоционально окрашенный слова (потрясающе, великолепно, незамедлительно, прекрасный выбор); помоги в выборе решения; сопроводи клиента после завершения диалога (позвони или напиши, чтобы уточнить решение его вопроса)"},
+                {userColor:"green",description:"Будь искренним, спокойным, клиент не любит спешку; излагай информацию логично и последовательно, можно в хронологичесокм порядке, расскажи обо всех вариантах; мягко подтолкни к нужному решению ('все же предлагаю.., ведь это..'); дай время на принятие решения"},
+                {userColor:"blue",description:"Говори фактами; излагай информацию логично и последовательно; не дави и торопи, будь терпеливым; уважай личное пространство и соблюдай дистанцию (не подталкивай к решению, он определится сам); сохраняй контроль и не ведись на скепсис (расскажи, что ты предпринял и что сделаешь, чтобы решить вопрос)"},]            
   }
 
 const root = document.querySelector('.wrapper');
@@ -103,9 +108,35 @@ function handleColorSelect (event) {
             descrList[i].style.display = 'block';
         } else {descrList[i].style.display = 'none';}
     }
+    renderEmployeeTask (targetColor);
 }
 
 buttonsList[3].addEventListener('click', handleColorSelect )
 buttonsList[2].addEventListener('click', handleColorSelect )
 buttonsList[1].addEventListener('click', handleColorSelect )
 buttonsList[0].addEventListener('click', handleColorSelect )
+
+function renderEmployeeTask (color) {
+    let removeTaskDescription = document.querySelector('.taskDescription');
+    if (removeTaskDescription) {
+        removeTaskDescription.remove();
+    }
+    let description = '';
+    for (let i = 0;i < templateData.employeeTasks.length;i++) {
+        if (templateData.employeeTasks[i].userColor === color) {
+            description = templateData.employeeTasks[i].description;
+            break;
+        }
+    }
+    let taskBlock = document.createElement('div');
+    taskBlock.className = 'descr';
+    let taskH4 = document.createElement('h4');
+    taskH4.innerHTML = 'Твоя задача:';
+    taskBlock.innerHTML = description;
+
+    taskBlock.prepend(taskH4);
+    let taskDescription = document.createElement('div');
+    taskDescription.className = 'taskDescription';
+    taskDescription.append(taskBlock);
+    root.append(taskDescription);
+}
