@@ -40,20 +40,38 @@
 // Подсчет ЗП ))
 
 
-let staf = +prompt("Сколько сотрудников получили ЗП?")
+// let staf = +prompt("Сколько сотрудников получили ЗП?")
 
-const salaries = {};
+// const salaries = {};
 
-for (let i = 0; i < staf; i++) {
-    let name = prompt("Кто получил ЗП?");
-    let sum = +prompt(`Скольк ЗП получил ${name}?`);
+// for (let i = 0; i < staf; i++) {
+//     let name = prompt("Кто получил ЗП?");
+//     let sum = +prompt(`Скольк ЗП получил ${name}?`);
 
-    salaries[name] = sum;
-}
+//     salaries[name] = sum;
+// }
 
-let fot = 0;
-for (let key in salaries) {
-   fot = fot + salaries[key]
-}
+// let fot = 0;
+// for (let key in salaries) {
+//    fot = fot + salaries[key]
+// }
 
-alert(`ФОТ отдела = ${fot}`);
+// alert(`ФОТ отдела = ${fot}`);
+
+// Меню х2
+
+// let menu = {
+//     width: 200,
+//     height: 300,
+//     title: "My menu"
+//   };
+  
+//   function multiplyNumeric(menu) {
+//     for (let key in menu) {
+//         if (typeof(menu[key]) === "number") {
+//             menu[key] *= 2;
+//         }
+//     }
+//   }
+
+//   multiplyNumeric(menu);
