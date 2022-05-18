@@ -37,3 +37,23 @@
 // Cycle lesson
 
 
+// Подсчет ЗП ))
+
+
+let staf = +prompt("Сколько сотрудников получили ЗП?")
+
+const salaries = {};
+
+for (let i = 0; i < staf; i++) {
+    let name = prompt("Кто получил ЗП?");
+    let sum = +prompt(`Скольк ЗП получил ${name}?`);
+
+    salaries[name] = sum;
+}
+
+let fot = 0;
+for (let key in salaries) {
+   fot = fot + salaries[key]
+}
+
+alert(`ФОТ отдела = ${fot}`);
