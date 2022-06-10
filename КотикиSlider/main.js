@@ -22,7 +22,7 @@ const slider = {
 
     },
     createDots: function () {
-        for (let i = 0; i < slider.images.length;i++) {
+        for (let i = 0; i < this.images.length;i++) {
             let li = document.createElement('li');
             li.className = "koto-dot";
             li.dataset.index = i;
