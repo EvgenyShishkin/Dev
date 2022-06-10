@@ -53,7 +53,7 @@
 
 // let fot = 0;
 // for (let key in salaries) {
-//    fot = fot + salaries[key]
+//    fot +=  salaries[key]
 // }
 
 // alert(`ФОТ отдела = ${fot}`);
