@@ -19,7 +19,7 @@ const Slider = {
       this.setImage(this.imgIndex);
       div.append(this.createNavButton('right'));
       document.body.append(this.createNavDots());
-      document.body.style.backgroundImage = `url(${Slider.images[Slider.imgIndex]})`
+      
 
       
    },
@@ -63,18 +63,32 @@ const Slider = {
    setImage: function (pos) {
       let img = document.querySelector('.sliderImage');
       img.src = this.images[pos];
+      document.body.style.backgroundImage = `url(${this.images[pos]})`
    },
    nextBtn: function () {
       if(this.imgIndex < this.images.length-1) {
          this.setImage(++this.imgIndex)
+         this.setActiveDot()
       }
    },
    prevBtn: function () {
       if(this.imgIndex > 0) {
          this.setImage(--this.imgIndex);
+         this.setActiveDot()
+      }
+   },
+   setActiveDot: function () {
+      let li = document.querySelectorAll('.dot')
+      for (let i = 0;i < this.images.length;i++) {
+         if(i === this.imgIndex) {
+            li[i].className = 'dot--active';
+         } else {
+            li[i].className = 'dot';
+         }
       }
    }
    
 }
 
 Slider.createSliderWindow(1);
+Slider.setActiveDot();
