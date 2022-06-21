@@ -1,10 +1,11 @@
 const Slider = {
-   images: ['https://www.itl.cat/pngfile/big/186-1861341_widescreen-road-scenery-hd.jpg',
-   'https://get.wallhere.com/photo/sunlight-landscape-hill-nature-grass-sky-field-green-morning-farm-horizon-plateau-cloud-tree-flower-grassland-plant-pasture-agriculture-meadow-plantation-plain-lawn-2560x1600-px-prairie-crop-rural-area-grass-family-paddy-field-General-551245.jpg',
-   'https://klike.net/uploads/posts/2019-11/1572609133_17-min.jpg'],
+   images: ['https://happyn.ru/uploads/posts/2019-11/thumbs/1573568668_75.jpg',
+   'https://live.staticflickr.com/2948/15465273181_b9907aed39.jpg',
+   'https://lasix.ru/nw/images/500x300/31108.jpg',
+   'https://www.astromeridian.ru/assets/images/sonnik/podsolnyxi.jpg'],
    width: '500px',
    height: '300px',
-   imgIndex: 1,
+   imgIndex: 0,
    
 
    
@@ -18,7 +19,8 @@ const Slider = {
       div.append(this.addImgBlock());
       this.setImage(this.imgIndex);
       div.append(this.createNavButton('right'));
-      document.body.append(this.createNavDots());
+      // document.body.append(this.createNavDots());
+      this.setActiveDot()
       
 
       
@@ -63,7 +65,7 @@ const Slider = {
    setImage: function (pos) {
       let img = document.querySelector('.sliderImage');
       img.src = this.images[pos];
-      document.body.style.backgroundImage = `url(${this.images[pos]})`
+      // document.body.style.backgroundImage = `url(${this.images[pos]})`
    },
    nextBtn: function () {
       if(this.imgIndex < this.images.length-1) {
@@ -90,5 +92,5 @@ const Slider = {
    
 }
 
-Slider.createSliderWindow(1);
-Slider.setActiveDot();
+Slider.createSliderWindow(0);
+
