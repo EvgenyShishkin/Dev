@@ -1,15 +1,15 @@
-const Slider = {
-   images: ['https://happyn.ru/uploads/posts/2019-11/thumbs/1573568668_75.jpg',
+function Slider () {
+   images = ['https://happyn.ru/uploads/posts/2019-11/thumbs/1573568668_75.jpg',
    'https://live.staticflickr.com/2948/15465273181_b9907aed39.jpg',
    'https://lasix.ru/nw/images/500x300/31108.jpg',
-   'https://www.astromeridian.ru/assets/images/sonnik/podsolnyxi.jpg'],
-   width: '500px',
-   height: '300px',
-   imgIndex: 0,
+   'https://www.astromeridian.ru/assets/images/sonnik/podsolnyxi.jpg'];
+   width = '500px';
+   height = '300px';
+   imgIndex = 0;
    
 
    
-   createSliderWindow: function (pos) {
+   createSliderWindow = function (pos) {
       let div = document.createElement('div');
       div.style.width = this.width;
       div.style.height = this.height;
@@ -24,8 +24,8 @@ const Slider = {
       
 
       
-   },
-   createNavButton: function (side) {
+   };
+   createNavButton = function (side) {
       let btn = document.createElement('div');
       btn.className = 'btn';
       btn.dataset.btn = side;
@@ -41,8 +41,8 @@ const Slider = {
       })
       
       return btn
-   },
-   createNavDots: function () {
+   };
+   createNavDots = function () {
       let dotList = document.createElement('ul');
       dotList.className = 'dotList';
       for (let i = 0; i < this.images.length;i++) {
@@ -52,45 +52,37 @@ const Slider = {
 
       }
       return dotList;
-   },
+   };
    
-   addImgBlock: function () {
+   addImgBlock = function () {
       let img = document.createElement('img');
       img.style.width = 'inherit';
       img.style.height = 'inherit';
       img.className = 'sliderImage';
       
       return img;
-   },
-   setImage: function (pos) {
+   };
+   setImage = function (pos) {
       let img = document.querySelector('.sliderImage');
       img.src = this.images[pos];
       // document.body.style.backgroundImage = `url(${this.images[pos]})`
-   },
-   nextBtn: function () {
+   };
+   nextBtn = function () {
       if(this.imgIndex < this.images.length-1) {
          this.setImage(++this.imgIndex)
          this.setActiveDot()
       }
-   },
-   prevBtn: function () {
+   };
+   prevBtn = function () {
       if(this.imgIndex > 0) {
          this.setImage(--this.imgIndex);
          this.setActiveDot()
       }
-   },
-   setActiveDot: function () {
-      let li = document.querySelectorAll('.dot')
-      for (let i = 0;i < this.images.length;i++) {
-         if(i === this.imgIndex) {
-            li[i].className = 'dot--active';
-         } else {
-            li[i].className = 'dot';
-         }
-      }
-   }
+   };
+  
    
 }
 
-Slider.createSliderWindow(0);
+let slider1 = new Slider;
+console.log(slider1)
 
