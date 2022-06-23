@@ -3,7 +3,9 @@ function Slider (width,height,url,) {
    this.width = width+'px';
    this.height = height+'px';
    this.imgIndex = 0;
-   
+   // сделать IDcontainer для append'a в конткретный div.
+   // сделать проверку существования div в структуре
+   // добавить функцинал смены картинки при нажатии точки
    
 
    
