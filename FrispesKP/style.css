@@ -73,7 +73,7 @@ body {
     margin-bottom: 8px;
 }
 .frameIntro::after {
-    content: "";
+    content: " ";
     width: 73px;
     height: 2px;
     background-color: #222831;
@@ -181,10 +181,104 @@ h3 {
 .ourSpaceSlider {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 53px;
+    margin-bottom: 110px;
 }
-.mainImage {
+.hiddenBlock {
     width: 350px;
     height: 467px;
     background-color: #10375C;
+    display: none;
+}
+.visibleBlock {
+    width: 350px;
+    height: 467px;
+    position: relative;
+}
+.visibleBlock img {
+    width: 350px;
+    height: 419px;
+}
+.sliderShowDescrBtn {
+    width: 72px;
+    height: 72px;
+    position: absolute;
+    background-color: #FF5722;
+    left: 0;
+    bottom: 48px;
+    transition: 0.2s;
+    color: #FF5722;
+    line-height: 72px;
+    text-align: center;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    overflow: hidden;
+
+}
+.sliderDescr {
+    font-family: 'Lato';
+    font-weight: 700;
+    font-size: 20px;
+    color: #222831;
+    padding-top: 24px;
+    text-align: center;
+}
+.sliderShowDescrBtn:hover {
+    width: 255px;
+    color: white;
+}
+
+/************** whyFrispesBlock ***************/
+
+.whyFrispesBlock {
+    display: flex;
+    width: 100%;
+    margin-bottom: 115px;
+}
+.whyFrispIcons {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.iconElement {
+    width: 50%;
+}
+.elemNumber {
+    color: #10375C;
+    font-family: 'Lora';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+}
+.elemDescr {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #9A9A9A;
+}
+.whyDescrBlock {
+    width: 50%;
+    padding: 54px;
+    background-color: #10375C;
+    color: white;
+}
+.preDescr {
+    font-family: 'Lato';
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+.h4mainDescr {
+    font-family: 'Lora';
+    font-weight: 700;
+    font-size: 40px;
+    margin-bottom: 24px;
+}
+.descriptionOfWhy {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
 }
