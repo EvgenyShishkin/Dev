@@ -66,7 +66,7 @@ body {
 }
 
 /****************** CONTENT1 ****************/
-.frameIntro {
+.pre {
     font-weight: 500;
     font-size: 20px;
     color: #222831;
@@ -282,3 +282,4 @@ h3 {
     font-weight: 500;
     font-size: 20px;
 }
+
