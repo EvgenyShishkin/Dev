@@ -283,3 +283,236 @@ h3 {
     font-size: 20px;
 }
 
+/*************** ourFacilites **************/
+.facilitiesBlock {
+    margin-bottom: 112px;
+}
+.h4Facilit {
+    width: 570px;
+    margin-bottom: 57px;
+}
+.mainFacilWindow {
+    display: flex;
+    justify-content: space-between;
+}
+.fasilTale {
+    width: 293px;
+    height: 73px;
+    padding: 24px;
+    font-family: 'Lato';
+    font-weight: 700;
+    font-size: 20px;
+    color: #222831;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.fasilTale:hover {
+    transform: scale(1.1);
+}
+.taleActive {
+    width: 293px;
+    height: 73px;
+    padding: 24px;
+    font-family: 'Lato';
+    font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #FF5722;
+    color: white;
+}
+
+/*************** galleryBlock *****************/
+
+.galleryBlock {
+    position: relative;
+    width: 1440px;
+    overflow: hidden;
+    margin-bottom: 112px;
+}
+.descrGalleryBlock {
+    position: absolute;
+    right: 330px;
+    z-index: 2;
+}
+.galleryDescr {
+    width: 500px;
+}
+.navPannel {
+    display: flex;
+    font-weight: 700;
+    font-size: 50px;
+    color: #FF5722;
+    justify-content: space-around;
+    width: 100px;
+}
+.navPannel div {
+    cursor: pointer;
+}
+.left {
+    color: #9A9A9A;
+    margin-right: 20px;
+}
+.sliderWidth {
+    width: 1440px;
+    overflow: hidden;
+    position: relative;
+    right: -100;
+}
+.gallerySlider {
+    display: flex;
+    width: 2000px;
+    align-items: flex-end;
+    position: relative;
+    left: -300px;
+    top: 0;
+}
+.gallerySlider div {
+    margin-right: 30px;
+}
+.galleryImg1,.galleryImg3,.galleryImg4,.galleryImg5 {
+    width: 350px;
+    height: 350px;
+    background-image: url(images/gallery/image3.jpg);
+    transition: 0.2s;
+}
+.galleryImg1:hover,.galleryImg3:hover,.galleryImg4:hover,.galleryImg5:hover {
+    transform: scale(1.05);
+}
+.galleryImg2 {
+    width: 450px;
+    height: 605px;
+    background-image: url(images/gallery/image2.jpg);
+}
+
+/************** who Uses ***************/
+.whoUsesBlock {
+    text-align: center;
+    margin-bottom: 130px;
+}
+.whoUsesDescr {
+    margin-bottom: 24px;
+}
+.whoUsesBlock .pre {
+    color: #9A9A9A;
+    margin-bottom: 72px;
+}
+.usersList {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+/************** Customer Reviews ***************/
+
+.customerReviewsBlock {
+    margin-bottom: 148px;
+}
+.descrAndNavBlock {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 56px;
+    
+}
+.custRevWhy {
+    width: 400px;
+    color: #10375C;
+}
+.reviewElem {
+    width: 445px;
+    height: 393px;
+    background-color: #10375C;
+    padding: 47px 40px 35px 40px;
+    margin-right: 20px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.reviewsSlider {
+    display: flex;
+    min-width: 2000px ;
+}
+.rewiewPerson {
+    display: flex;
+    align-items: center ;
+}
+.rewPersPhoto {
+    margin-right: 16px;
+}
+.rewPersName {
+    font-family: 'Lato';
+    font-weight: 700;
+    font-size: 18px;
+    color: white;
+    margin-bottom: 4px;
+}
+.reviewDescr {
+    font-family: 'Lato';
+    font-style: normal;
+    font-size: 16px;
+    line-height: 26px;
+}
+.rewPersProfession {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+/*********************** FAQ **********************/
+
+.faqBlock {
+    text-align: center;
+    margin-bottom: 39px;
+}
+.faqDescr {
+    width: 578px;
+    margin: 0 auto 54px;
+}
+.faqQuestions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 62px;
+}
+.questionBlock {
+    width: 350px;
+    height: 171px;
+    padding: 42px 40px 63px;
+    font-family: 'Lora';
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 33px;
+    color: #000000;
+    box-shadow: 0 3px 15px -8px  gray;
+    cursor: pointer;
+    transition: .1s;
+}
+.questionBlock:hover {
+    background-color: #FF5722;
+    color: white;
+}
+.moreQuestions {
+    color: #FF5722;
+    font-family: 'Lato';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+
+}
+.toRight {
+    display: inline-block;
+    font-size: 25px;
+    margin-left: 20px;
+    transition: 0.3s;
+}
+.moreQuestions:hover .toRight {
+    transform: rotate(360deg)
+}
+
+/************** News insights ***************/
+
