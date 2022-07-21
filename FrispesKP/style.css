@@ -11,7 +11,7 @@
     padding: 0;
 }
 body {
-    width: 1440px;
+    /* width: 1440px; */
     margin: 0 auto;
     position: relative;
 }
@@ -19,7 +19,9 @@ body {
 .container {
     max-width: 1110px;
     margin: 0 auto;
+    position: relative;
 }
+
 
 /****************** HEADER ****************/
 .header {
@@ -144,7 +146,7 @@ body {
     background-color: white;
     border-radius: 30%;
 }
-.btnSubmit {
+.btnSubmit, .singUpMember {
     width: 363px;
     line-height: 53px;
     font-family: 'Lato';
@@ -243,6 +245,14 @@ h3 {
 }
 .iconElement {
     width: 50%;
+    display: flex;
+    align-items: center ;
+}
+.elemLogo {
+    margin-right: 24px;
+}
+.logoDescrWrap {
+    margin-top: 18px;
 }
 .elemNumber {
     color: #10375C;
@@ -250,6 +260,7 @@ h3 {
     font-style: normal;
     font-weight: 400;
     font-size: 32px;
+    margin-bottom: 10px;
 }
 .elemDescr {
     font-family: 'Lato';
@@ -322,20 +333,30 @@ h3 {
 }
 
 /*************** galleryBlock *****************/
-
+.galeryWrapper {
+    width: 1440px;
+    margin: 0 auto; 
+    overflow: hidden;
+}
 .galleryBlock {
     position: relative;
-    width: 1440px;
-    overflow: hidden;
     margin-bottom: 112px;
 }
+
 .descrGalleryBlock {
     position: absolute;
-    right: 330px;
+    right: 130px;
     z-index: 2;
 }
+.gallerySlider {
+    display: flex;
+    align-items: flex-end;
+    width: 2000px;
+    position: relative;
+    left: -250px;
+}
 .galleryDescr {
-    width: 500px;
+    width: 496px;
 }
 .navPannel {
     display: flex;
@@ -352,21 +373,7 @@ h3 {
     color: #9A9A9A;
     margin-right: 20px;
 }
-.sliderWidth {
-    width: 1440px;
-    overflow: hidden;
-    position: relative;
-    right: -100;
-}
-.gallerySlider {
-    display: flex;
-    width: 2000px;
-    align-items: flex-end;
-    position: relative;
-    left: -300px;
-    top: 0;
-}
-.gallerySlider div {
+.gallerySlider div  {
     margin-right: 30px;
 }
 .galleryImg1,.galleryImg3,.galleryImg4,.galleryImg5 {
@@ -389,6 +396,10 @@ h3 {
     text-align: center;
     margin-bottom: 130px;
 }
+.whoUsesWrapper {
+    width: 1110px;
+    margin: 0 auto;
+}
 .whoUsesDescr {
     margin-bottom: 24px;
 }
@@ -402,7 +413,11 @@ h3 {
     justify-content: space-between;
 }
 /************** Customer Reviews ***************/
-
+.reviewsWrapper {
+    width: 1275px;
+    overflow: hidden;
+    
+}
 .customerReviewsBlock {
     margin-bottom: 148px;
 }
@@ -411,6 +426,7 @@ h3 {
     align-items: flex-end;
     justify-content: space-between;
     margin-bottom: 56px;
+    width: 95%;
     
 }
 .custRevWhy {
@@ -496,7 +512,7 @@ h3 {
     background-color: #FF5722;
     color: white;
 }
-.moreQuestions {
+.moreQuestions, .seeMoreNews {
     color: #FF5722;
     font-family: 'Lato';
     font-weight: 400;
@@ -510,9 +526,86 @@ h3 {
     margin-left: 20px;
     transition: 0.3s;
 }
-.moreQuestions:hover .toRight {
+.moreQuestions:hover .toRight, .seeMoreNews .toRight{
     transform: rotate(360deg)
 }
 
 /************** News insights ***************/
 
+.newsInsightsBlock {
+    padding-top: 60px;
+    background-color: #F8F8F8;
+    padding-bottom: 66px;
+    
+}
+.newsInsightsWrapper {
+    width: 1110px;
+    margin: 0 auto;
+}
+.newsInsightsDescrBlock {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 56px;
+    
+}
+.newsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+.newsBlock {
+    width: 350px;
+    height: 320px;
+    background-color: #fff;
+    margin-bottom: 30px;
+}
+.newsDescription {
+    font-family: 'Lora';
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 28px;
+    margin: 14px 16px 2px;
+}
+.newsAuthor {
+    font-family: 'Lato';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    color: #9A9A9A;
+    margin: 0 16px 16px;
+}
+/************** Became a Member ***************/
+
+.becameMemberBlock {
+    background-color: #10375C;
+    height: 456px;
+}
+.memberWrapper {
+    display: flex;
+    width: 1110px;
+    margin: 0 auto;
+}
+.becameMemberSideinfoBlock {
+    padding-top: 71px;
+}
+.readyToTryBlock {
+    color: #ffffff;
+    width: 445px;
+    margin-bottom: 16px;
+}
+.becameMemberSideinfoBlock .pre {
+    color: #F8F8F8;
+    width: 429px;
+}
+.becameMemberSideDescr {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    color: #F8F8F8;
+    width: 429px;
+    margin-bottom: 33px;
+}
