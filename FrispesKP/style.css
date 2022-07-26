@@ -581,14 +581,17 @@ h3 {
 .becameMemberBlock {
     background-color: #10375C;
     height: 456px;
+    overflow: hidden;
 }
 .memberWrapper {
     display: flex;
     width: 1110px;
     margin: 0 auto;
+    height: 100%;
 }
 .becameMemberSideinfoBlock {
     padding-top: 71px;
+    width: 50%;
 }
 .readyToTryBlock {
     color: #ffffff;
@@ -608,4 +611,74 @@ h3 {
     color: #F8F8F8;
     width: 429px;
     margin-bottom: 33px;
+}
+.becameMemberVisualBlock {
+    position: relative;
+}
+.bgLinesRTop, .bgLinesLBot {
+    width: 262px;
+    height: 262px;
+    background-image: url(images/lines.png);
+    position: absolute;
+}
+.bgLinesLBot {
+    left: 98px;
+    bottom: -87px;
+}
+.bgLinesRTop {
+    left: 209px;
+    top: 50px;
+}
+.memberMan {
+    background-image: url(images/man.png);
+    background-position: bottom;
+    position: absolute;
+    left: 140px;
+    z-index: 3;
+    width: 335px;
+    height: 100%
+}
+
+/************** Footer ***************/
+
+.footer {
+    height: 408px;
+    display: flex;
+    color: white;
+    background-color: #0D2C4A;
+}
+.footerWrapper {
+    width: 1110px;
+    margin: 0 auto;
+}
+.footerSideDescription {
+    padding-top: 56px
+}
+.footerLogo {
+    text-decoration: none;
+    color: white;
+    font-family: 'Lora';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 52px;
+    line-height: 67px;
+   
+}
+.footerDescr {
+    width: 255px;
+    margin: 16px 0 24px;
+
+}
+.footerSocial {
+    display: flex;
+    align-items: baseline;
+}
+.footerSocial li {
+    cursor: pointer;
+}
+.footerSocInst {
+    margin-right: 18px;
+}
+.footerSocYoutube {
+    margin-right: 23px;
 }
