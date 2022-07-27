@@ -650,9 +650,11 @@ h3 {
 .footerWrapper {
     width: 1110px;
     margin: 0 auto;
+    display: flex;
 }
 .footerSideDescription {
-    padding-top: 56px
+    padding-top: 56px;
+    margin-right: 125px;
 }
 .footerLogo {
     text-decoration: none;
@@ -662,7 +664,7 @@ h3 {
     font-weight: 700;
     font-size: 52px;
     line-height: 67px;
-   
+    
 }
 .footerDescr {
     width: 255px;
@@ -681,4 +683,34 @@ h3 {
 }
 .footerSocYoutube {
     margin-right: 23px;
+}
+.footerLinks {
+    display: flex;
+    margin-top: 86px;
+}
+.titleLink {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    opacity: 0.5;
+    margin-bottom: 24px;
+}
+.listTitle {
+    display: flex;
+    flex-direction: column;
+}
+.listTitle + .listTitle {
+    margin-left: 86px;
+}
+.listTitle li {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    display: block;
+    margin-bottom: 9px;
+    
 }
