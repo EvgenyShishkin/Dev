@@ -712,5 +712,7 @@ h3 {
     line-height: 26px;
     display: block;
     margin-bottom: 9px;
-    
+}
+.listTitle:nth-of-type(1) li {
+    width: 150px;
 }
