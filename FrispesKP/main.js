@@ -37,19 +37,29 @@ const facilitiesArray = [
     {option: "Child playground", url:"https://u.9111s.ru/uploads/201905/06/fc9a3b37eb3404a1803e50e3f3c4cfa3.jpg"},
     {option: "Outdoor spaces", url:"https://sc01.alicdn.com/kf/HTB1pIpbHFXXXXcCXpXXq6xXFXXXL/205779000/HTB1pIpbHFXXXXcCXpXXq6xXFXXXL.jpg"},
 ];
-let selectTale = document.querySelector('.selectTale');
 
-
-function VreticalSlider (arr) {
+let VerticalSlider = function(location,imgArr) {
     
-    this.createOptionList = function (arr) {
-        for (let i=0;i<arr.length;i++) {
+    this.createUl = function() {
+        this.div = document.querySelector(`.${location}`)
+        let ul = document.createElement('ul');
+        ul.className = 'selectTale';
+        
+        for(let i=0;i<imgArr.length;i++) {
             let li = document.createElement('li');
-            li.innerHTML = arr[i].option;
-            selectTale.append(li);
+            li.className = 'fasilTale';
+            li.setAttribute('data',i);
+            li.innerHTML = imgArr[i].option;
+            ul.append(li);
         }
-       
-
+        this.div.prepend(ul);
+    };
+    this.activeClick = function() {
+        
     }
+   
 }
 
+let vs = new VerticalSlider('mainFacilWindow',facilitiesArray)
+
+vs.createUl();

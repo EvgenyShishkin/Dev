@@ -76,3 +76,35 @@
 
 //   multiplyNumeric(menu);
 
+
+
+//********* Калькулятор ************
+
+// function Calculator () {
+
+//     this.read = function () {
+//         this.x = +prompt("enter first num",0);
+//         this.y = +prompt("enter second num",0);
+//     }
+//     this.sum = function() {return this.x+this.y},
+//     this.mul = function() {return this.x*this.y}
+// }
+
+// let calc = new Calculator ()
+// calc.read();
+// alert( calc.sum() );
+// alert( calc.mul() );
+
+//********* Аккумулятор ************
+
+function Accumulator(startValue) {
+    this.value = startValue;
+    this.read = function() {this.value += +prompt("enter num to sum",0);}
+}
+
+let accumulator = new Accumulator(10);
+
+accumulator.read(); 
+accumulator.read(); 
+
+alert(accumulator.value);
