@@ -38,7 +38,11 @@ const facilitiesArray = [
     {option: "Outdoor spaces", url:"https://sc01.alicdn.com/kf/HTB1pIpbHFXXXXcCXpXXq6xXFXXXL/205779000/HTB1pIpbHFXXXXcCXpXXq6xXFXXXL.jpg"},
 ];
 
+
+// ************** ourFacilites ***************
 let VerticalSlider = function(location,imgArr) {
+    let currentImg = 2;
+    
     
     this.createUl = function() {
         this.div = document.querySelector(`.${location}`)
@@ -53,13 +57,109 @@ let VerticalSlider = function(location,imgArr) {
             ul.append(li);
         }
         this.div.prepend(ul);
+        this.ul = ul;
     };
-    this.activeClick = function() {
-        
+    this.setImg = function () {
+        document.querySelector('.fasilImage img').src = imgArr[currentImg].url;
     }
-   
+    
+    this.startSlider = function() {
+        this.createUl();
+        this.setImg();
+    }
 }
 
-let vs = new VerticalSlider('mainFacilWindow',facilitiesArray)
+let vs = new VerticalSlider('mainFacilWindow',facilitiesArray);
+vs.startSlider();
 
-vs.createUl();
+
+//************** Customer Reviews ***************
+
+
+let CustomerReviewSlider = function(loc,loc2,revArr) {
+
+    this.reviewsSliderloc = document.querySelector(`.${loc}`);
+    this.descrAndNavBlock = document.querySelector(`.${loc2}`);
+    
+    this.createNavPanel = function () {
+        let navPannel = document.createElement('div');
+        let leftBtn = document.createElement('div');
+        let rightBtn = document.createElement('div');
+
+        navPannel.className = 'navPannel';
+        leftBtn.className = 'left';
+        leftBtn.id = 'CRleft';
+        leftBtn.innerHTML = '←';
+        
+        rightBtn.className = 'rigrt';
+        rightBtn.id = 'CRrigrt';
+        rightBtn.innerHTML = '→';
+        
+        navPannel.append(leftBtn);
+        navPannel.append(rightBtn);
+
+        this.descrAndNavBlock.append(navPannel);
+
+        this.leftBtn = leftBtn;
+        this.rightBtn = rightBtn;
+        
+    }
+    
+    this.createSliderStructure = function (revArr) {
+
+        for (let i = 0; i<revArr.length;i++) {
+        
+            let reviewElem = document.createElement('div');
+            let reviewDescr = document.createElement('div');
+            let rewiewPerson = document.createElement('div');
+            let rewPersPhoto = document.createElement('div');
+            let rewPersInfo = document.createElement('div');
+            let rewPersName = document.createElement('div');
+            let rewPersProfession = document.createElement('div');
+
+            this.reviewImage = document.createElement('img');
+            this.reviewImage.src = revArr[i].imgSrc;
+
+            reviewElem.className = 'reviewElem';
+            reviewDescr.className = 'reviewDescr';
+            reviewDescr.innerHTML = revArr[i].reviewDescr;
+            rewiewPerson.className = 'rewiewPerson';
+            rewPersPhoto.className = 'rewPersPhoto';
+            rewPersInfo.className = 'rewPersInfo';
+            rewPersName.className = 'rewPersName';
+            rewPersName.innerHTML = revArr[i].rewPersName;
+            rewPersProfession.className = 'rewPersProfession';
+            rewPersProfession.innerHTML = revArr[i].rewPersProfession;
+            
+            this.reviewsSliderloc.append(reviewElem);
+            reviewElem.append(reviewDescr);
+            reviewElem.append(rewiewPerson);
+            rewiewPerson.append(rewPersPhoto);
+            rewiewPerson.append(rewPersInfo);
+            rewPersPhoto.append(this.reviewImage);
+            rewPersInfo.append(rewPersName);
+            rewPersInfo.append(rewPersProfession);
+
+        }
+
+        
+    }
+    this.startCRSlider = function () {
+        this.createSliderStructure(revArr);
+        this.createNavPanel();
+        this.leftBtn.addEventListener('click', function (){
+            
+        });
+        this.rightBtn.addEventListener('click', function (){
+            
+        });
+        
+    }
+
+    
+}
+
+let crs = new CustomerReviewSlider ('reviewsSlider','descrAndNavBlock',reviewsArray);
+crs.startCRSlider();
+
+
